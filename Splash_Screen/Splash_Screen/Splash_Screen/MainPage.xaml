@@ -5,10 +5,7 @@
              x:Class="Splash_Screen.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label  
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Image Source="renson_start" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
     </StackLayout>
 
 </ContentPage>

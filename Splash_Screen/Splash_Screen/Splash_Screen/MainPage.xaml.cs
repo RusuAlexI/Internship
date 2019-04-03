@@ -13,5 +13,16 @@ namespace Splash_Screen
         {
             InitializeComponent();
         }
+
+        protected async override void OnAppearing()
+        {
+            
+            base.OnAppearing();
+            //await Task.Delay(3000);
+
+
+
+
+        }
     }
 }

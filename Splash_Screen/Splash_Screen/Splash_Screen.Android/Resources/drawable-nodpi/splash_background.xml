@@ -3,10 +3,5 @@
  <item>
  <color android:color="#000000"/>
  </item>
- <item>
- <bitmap
- android:src="@drawable/image"
- android:tileMode="disabled"
- android:gravity="center"/>
- </item>
+ 
  </layer-list>
