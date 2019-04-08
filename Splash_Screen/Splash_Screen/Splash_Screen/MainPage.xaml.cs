@@ -18,7 +18,8 @@ namespace Splash_Screen
         {
             
             base.OnAppearing();
-            //await Task.Delay(3000);
+            await Task.Delay(3000);
+            await Navigation.PushModalAsync(new Login()); // PushModalAsync, sau in App.xaml.cs MainPage = new NavigationPage( new MainPage()); 
 
 
 
