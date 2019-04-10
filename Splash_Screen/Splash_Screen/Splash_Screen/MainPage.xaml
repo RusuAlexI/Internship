@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Splash_Screen"
              x:Class="Splash_Screen.MainPage">
-
+        <!--
     <StackLayout>
         <Image Source="renson_start" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-    </StackLayout>
+    </StackLayout>  -->
 
 </ContentPage>

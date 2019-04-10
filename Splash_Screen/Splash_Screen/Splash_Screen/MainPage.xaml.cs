@@ -14,12 +14,15 @@ namespace Splash_Screen
             InitializeComponent();
         }
 
-        protected async override void OnAppearing()
+        protected  override void OnAppearing()
         {
             
             base.OnAppearing();
-            await Task.Delay(3000);
-            await Navigation.PushModalAsync(new Login()); // PushModalAsync, sau in App.xaml.cs MainPage = new NavigationPage( new MainPage()); 
+
+            
+
+            Application.Current.MainPage = new Login();
+            //await Navigation.PushModalAsync(new Login()); // PushModalAsync, sau in App.xaml.cs MainPage = new NavigationPage( new MainPage()); 
 
 
 

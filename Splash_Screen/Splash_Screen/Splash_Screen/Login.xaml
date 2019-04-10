@@ -10,20 +10,22 @@
         </StackLayout>
     </ContentPage.Content>
 
-    <RelativeLayout BackgroundColor="#3D7BB8">
+    
+
+    <RelativeLayout x:Name="relative" BackgroundColor="#3D7BB8">
 
         <Image x:Name="Logo" Source="logo_renson"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.32}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.20}"
                ></Image>
 
-        <Label x:Name="LoginLabel" Text="Log in"
+        <Label x:Name="LoginLabel" Text="Log in" 
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.52}"
                HorizontalTextAlignment="Center" FontSize="Large" TextColor="White"
                ></Label>
-
-        <StackLayout Orientation="Vertical" Spacing="2" BackgroundColor="White" Margin="10,0,10,0"
+            <!-- make te below stack layout the child of LoginLabel  -->
+        <StackLayout Parent="LoginLabel"  Orientation="Vertical" Spacing="2" BackgroundColor="White" Margin="10,0,10,0"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.58}"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
@@ -34,7 +36,17 @@
                     TextColor="White" Margin="10" Clicked="LoginButton_Clicked"></Button>
             
         </StackLayout>
-                     
+
+        <StackLayout x:Name="test" Orientation="Vertical" BackgroundColor="Black" IsVisible="False"  
+                     HeightRequest="200" WidthRequest="200"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                     >
+            
+        </StackLayout>
+
     </RelativeLayout>
     
 </ContentPage>

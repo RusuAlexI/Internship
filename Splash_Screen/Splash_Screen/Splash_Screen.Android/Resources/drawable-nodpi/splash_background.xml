@@ -3,5 +3,13 @@
  <item>
  <color android:color="#000000"/>
  </item>
+
+  <item>
+    <bitmap
+    android:src="@drawable/renson_start"
+    android:tileMode="disabled"
+    android:scaleType="fitXY"
+    />
+  </item>
  
  </layer-list>

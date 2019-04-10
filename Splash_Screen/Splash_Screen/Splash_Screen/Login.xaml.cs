@@ -15,11 +15,22 @@ namespace Splash_Screen
 		public Login ()
 		{
 			InitializeComponent ();
+
 		}
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
+        public  void LoginButton_Clicked(object sender, EventArgs e)
         {
+            test.IsVisible = true;
+            test.Opacity = 0.5;
+            test.Children.Add(new RotatingScreen());
 
+            //test.IsVisible=false;
+            //test.Children.Clear();
+            //test.Children.Remove(new RotatingScreen());
+            
+
+
+            // await Navigation.PushModalAsync(new RotatingScreen());
         }
     }
 }
