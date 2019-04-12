@@ -31,9 +31,18 @@
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.42}">
             <Entry x:Name="UserName" Text="" Margin="5,25,5,5"></Entry>
-            <Entry x:Name="Password" Text="" IsPassword="True" Margin="5,5,5,65"></Entry>
-            <Button x:Name="LoginButton" FontAttributes="Bold" HorizontalOptions="FillAndExpand" BackgroundColor="#3D7BB8" Text="Log in"
-                    TextColor="White" Margin="10" Clicked="LoginButton_Clicked"></Button>
+            <Entry x:Name="Password" Text="" IsPassword="True" Margin="5,5,5,30"></Entry>
+
+            <Label x:Name="Password_Forgot" Text="Forgot your password?" TextColor="#3D7BB8" HorizontalTextAlignment="Center" Margin="5,5,5,27"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.52}">
+                <Label.GestureRecognizers >
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <Button x:Name="LoginButton" FontAttributes="Bold" HorizontalOptions="FillAndExpand" BackgroundColor="#3D7BB8" 
+                    Text="Log in" TextColor="White" Margin="10" Clicked="LoginButton_Clicked"></Button>
             
         </StackLayout>
 
@@ -44,7 +53,7 @@
                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                      >
-            
+            <Image x:Name="spinnerImage" Source="spinner" Margin="60,220,50,50"></Image>
         </StackLayout>
 
     </RelativeLayout>
