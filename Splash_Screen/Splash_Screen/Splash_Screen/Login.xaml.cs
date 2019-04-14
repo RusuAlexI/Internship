@@ -81,5 +81,13 @@ namespace Splash_Screen
         {
             Password.IsPassword = Password.IsPassword ? false : true;
         }
+
+        private async void Register_Clicked(object sender, EventArgs e)
+        {
+            test.IsVisible = true;
+            test.Opacity = 0.5;
+            RotateImage();
+            await Navigation.PushModalAsync(new Register());
+        }
     }
 }

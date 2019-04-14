@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Splash_Screen.Register">
+    <RelativeLayout x:Name="relative" BackgroundColor="#3D7BB8">
+
+        <ImageButton x:Name="BackButton" Source="arrow" BackgroundColor="#2D7BB8" Margin="15" Clicked="BackButton_Clicked"
+                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.01}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.01}"></ImageButton>
+
+        <Label x:Name="LoginLabel" Text="Log in" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.13}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.02}"
+               HorizontalTextAlignment="Center" FontSize="Medium" TextColor="#6C9ED7" ></Label>
+
+        <Label x:Name="RegisterLabel" Text="Register" TextDecorations="Underline"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.02}"
+               HorizontalTextAlignment="Center" FontSize="Medium" TextColor="White"
+               ></Label>
+
+        <StackLayout Parent="LoginLabel"  Orientation="Vertical" Spacing=".1" BackgroundColor="White" Margin="10,0,10,0"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.08}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.92}">
+
+            <Label x:Name="InfoLabel" Text="Define user role, I want to register as:" Margin="20,20,5,5"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.28}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.10}"
+                FontSize="Small" TextColor="Gray"
+               ></Label>
+
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.92}">
+
+                <Image Source="p1" 
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.20}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1}"></Image>
+
+                <Image Source="p2"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.50}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.1}"></Image>
+            </StackLayout>
+            <Label Text="________________________________________________________________"  ></Label>
+        </StackLayout>
+
+        <StackLayout  Orientation="Vertical"  BackgroundColor="White" Margin="10,0,10,0"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.20}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.80}">
+
+            <Entry x:Name="FirstName" Text="" Placeholder="First name" PlaceholderColor="#d3d3d3" Margin="10,0,10,0"></Entry>
+            <Entry x:Name="LastName" Text="" Placeholder="Last name" PlaceholderColor="#d3d3d3" Margin="10,0,10,0"></Entry>
+            <Entry x:Name="EmailAddress" Text="" Placeholder="Email address" PlaceholderColor="#d3d3d3" Margin="10,0,10,0" ></Entry>
+
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="380" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="Password" Text="" Placeholder="Password" PlaceholderColor="#d3d3d3" IsPassword="True" Margin="10"></Entry>
+                    <Image Source="lock" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass1" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="380" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="RepeatPassword" Text="" Placeholder="Repeat password" PlaceholderColor="#d3d3d3" IsPassword="True" Margin="10"></Entry>
+                    <Image Source="lock" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass2" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            <Label Text="Must contain at least 8 characters:        including a number, a symbol and a capital." TextColor="#d3d3d3" HorizontalTextAlignment="End" Margin="100,0,10,0"></Label>
+
+            <Label Text="I have read and agree with the following" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" Margin="4,0,10,0" TextColor="Gray"></Label>
+
+            <StackLayout Orientation="Horizontal" Margin="20,0,10,0">
+                <Image Source="Check"></Image>
+                <Label Text="Terms and conditions" Margin="5" TextColor="CadetBlue"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="20,0,10,0">
+                <Image Source="Check"></Image>
+                <Label Text="I have read and agree with the following"  Margin="5" TextColor="CadetBlue"></Label>
+            </StackLayout>
+
+            <Button x:Name="RegisterButton" FontAttributes="Bold" HorizontalOptions="FillAndExpand" BackgroundColor="#d3d3d3" 
+                    Text="Register" TextColor="White" Margin="10"></Button>
+
+        </StackLayout>
+
+
+
+    </RelativeLayout>
+</ContentPage>

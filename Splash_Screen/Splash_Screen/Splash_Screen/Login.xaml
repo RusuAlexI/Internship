@@ -20,11 +20,22 @@
                ></Image>
 
         <Label x:Name="LoginLabel" Text="Log in" 
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.18}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.52}"
                HorizontalTextAlignment="Center" FontSize="Large" TextColor="White"
                ></Label>
-            
+
+
+        <Label x:Name="RegisterLabel" Text="Register" 
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.52}"
+               HorizontalTextAlignment="Center" FontSize="Large" TextColor="White"
+               >
+            <Label.GestureRecognizers >
+                <TapGestureRecognizer Tapped="Register_Clicked" NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+
         <StackLayout Parent="LoginLabel"  Orientation="Vertical" Spacing="2" BackgroundColor="White" Margin="10,0,10,0"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.58}"
