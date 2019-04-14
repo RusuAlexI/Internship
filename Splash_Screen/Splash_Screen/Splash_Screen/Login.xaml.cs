@@ -76,5 +76,10 @@ namespace Splash_Screen
             }
             test.IsVisible = false;
         }
+
+        private void ShowPass(object sender, EventArgs e)
+        {
+            Password.IsPassword = Password.IsPassword ? false : true;
+        }
     }
 }

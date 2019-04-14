@@ -24,14 +24,30 @@
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.52}"
                HorizontalTextAlignment="Center" FontSize="Large" TextColor="White"
                ></Label>
-            <!-- make te below stack layout the child of LoginLabel  -->
+            
         <StackLayout Parent="LoginLabel"  Orientation="Vertical" Spacing="2" BackgroundColor="White" Margin="10,0,10,0"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.58}"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.42}">
-            <Entry x:Name="UserName" Text="" Margin="5,25,5,5"></Entry>
-            <Entry x:Name="Password" Text="" IsPassword="True" Margin="5,5,5,30"></Entry>
+            <Entry x:Name="UserName" Text="" Margin="5,25,15,5"></Entry>
+
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="380" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Entry x:Name="Password" Text="" IsPassword="True" Margin="5"></Entry>
+                    <Image Source="lock" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
+            
 
             <Label x:Name="Password_Forgot" Text="Forgot your password?" TextColor="#3D7BB8" HorizontalTextAlignment="Center" Margin="5,5,5,27"
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.42}"
